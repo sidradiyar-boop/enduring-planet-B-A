@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="m-0 p-0 w-full overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Enduring Planet | Bookkeeping and Accounting Products and Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Force Full Screen Reset */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-height: 100% !important;
+            overflow-x: hidden;
+        }
+
         /* Company Brand Palette */
         :root {
             --bg-primary: #FAFBFF; 
@@ -197,7 +206,7 @@
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <nav class="sticky top-0 z-50 sticky-nav border-b border-gray-200 shadow-sm">
+    <nav class="sticky top-0 z-50 sticky-nav border-b border-gray-200 shadow-sm w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
@@ -221,7 +230,7 @@
     </nav>
 
     <!-- 1. Hero Section -->
-    <header class="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-48" style="background-color: var(--primary-dark);">
+    <header class="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-48 w-full" style="background-color: var(--primary-dark);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div class="max-w-4xl mx-auto text-center">
                 <p class="text-xl font-semibold text-slate-300 mb-4">Bookkeeping and Accounting Products and Services</p>
@@ -238,7 +247,7 @@
     </header>
 
     <!-- 2. Products & Solutions -->
-    <section id="solutions" class="py-24" style="background-color: var(--bg-secondary);">
+    <section id="solutions" class="py-24 w-full" style="background-color: var(--bg-secondary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl section-heading mb-3">Our Bookkeeping & Accounting Products</h2>
@@ -366,7 +375,7 @@
             </div>
 
             <!-- Our Approach -->
-            <div id="our-approach" class="mt-20 p-8 rounded-xl shadow-2xl max-w-7xl mx-auto" style="background-color: var(--primary-dark);">
+            <div id="our-approach" class="mt-20 p-8 rounded-xl shadow-2xl max-w-7xl mx-auto w-full" style="background-color: var(--primary-dark);">
                 <h3 class="text-4xl font-bold text-white text-center mb-12">Our Approach to Managed Accounting</h3>
                 <div class="text-center mb-10">
                     <p class="text-xl text-slate-300 mb-6">Our seamless 4-step process ensures predictable, accurate, and timely financial results.</p>
@@ -442,7 +451,7 @@
     </section>
 
     <!-- 3. Difference -->
-    <section id="difference" class="py-24" style="background-color: var(--bg-tertiary);">
+    <section id="difference" class="py-24 w-full" style="background-color: var(--bg-tertiary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl section-heading mb-3">The Enduring Planet Difference</h2>
@@ -481,14 +490,14 @@
     </section>
 
     <!-- 4. Pricing Table -->
-    <section id="pricing" class="py-24" style="background-color: var(--primary-dark);">
+    <section id="pricing" class="py-24 w-full" style="background-color: var(--primary-dark);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-extrabold mb-3 text-white">Pricing</h2>
                 <p class="text-lg text-slate-300 max-w-4xl mx-auto">Fixed, transparent, and scalable.</p>
             </div>
             
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-6xl mx-auto overflow-x-auto">
                 <table class="pricing-table">
                     <thead>
                         <tr>
@@ -540,7 +549,7 @@
     </section>
 
     <!-- 5. Reviews -->
-    <section id="reviews" class="py-24" style="background-color: var(--bg-primary);">
+    <section id="reviews" class="py-24 w-full" style="background-color: var(--bg-primary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl section-heading mb-3">Reviews</h2>
@@ -580,7 +589,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="contact" class="py-20" style="background-color: var(--bg-secondary);">
+    <section id="contact" class="py-20 w-full" style="background-color: var(--bg-secondary);">
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-3xl font-bold text-slate-900 mb-6">Start Your Financial Transformation Today</h2>
             <form onsubmit="event.preventDefault(); alert('Success!');" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
@@ -590,7 +599,7 @@
         </div>
     </section>
 
-    <footer class="py-12" style="background-color: var(--primary-dark);">
+    <footer class="py-12 w-full" style="background-color: var(--primary-dark);">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-slate-400 text-sm">&copy; 2024 Enduring Planet. All rights reserved.</p>
         </div>
