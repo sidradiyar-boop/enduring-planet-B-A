@@ -1,1 +1,660 @@
-# enduring-planet-B-A
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enduring Planet | Bookkeeping and Accounting Products and Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Company Brand Palette */
+        :root {
+            --bg-primary: #FAFBFF; 
+            --bg-secondary: #F5F8FF;
+            --bg-tertiary: #ECF2FF;
+            --primary-dark: #1E3056; 
+            --accent-teal: #01D5A4; 
+            --text-main: #374151; 
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        .section-heading {
+            color: var(--primary-dark);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+        
+        .accent-bar {
+            background-color: var(--accent-teal);
+            height: 4px;
+            width: 80px;
+            margin-top: 10px;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -5px rgba(1, 213, 164, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-teal);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #01b892; 
+            transform: translateY(-1px);
+        }
+        
+        .sticky-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Custom Table Styling for Pricing */
+        .pricing-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 15px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .pricing-table th {
+            background-color: var(--bg-secondary);
+            color: var(--primary-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        
+        .pricing-table td:last-child {
+            font-weight: 700;
+            color: var(--accent-teal);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .testimonial-card {
+            background-color: #ffffff;
+            border-top: 4px solid var(--accent-teal);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        /* Process Flow */
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .process-header {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        .process-role {
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .role-you {
+            background-color: var(--bg-primary); 
+            border: 1px dashed #dbeafe;
+        }
+        .role-our {
+            background-color: var(--bg-tertiary); 
+            border: 1px dashed #dbeafe;
+        }
+        .step-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-teal);
+            line-height: 1;
+        }
+
+        .feature-card-lg {
+            padding: 24px;
+            background-color: white;
+            border-radius: 12px;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            height: 100%;
+        }
+        .feature-icon-lg {
+            font-size: 32px;
+            color: var(--accent-teal);
+            margin-bottom: 15px;
+        }
+        
+        .feature-list-sm li {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        /* Hero Separator */
+        .hero-separator {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg-secondary);
+            clip-path: polygon(
+                0 60%, 
+                4% 50%, 
+                10% 70%, 
+                15% 40%, 
+                20% 65%, 
+                30% 30%, 
+                40% 75%, 
+                50% 10%, 
+                60% 80%, 
+                70% 35%, 
+                80% 85%, 
+                90% 15%, 
+                95% 45%, 
+                100% 20%, 
+                100% 100%, 
+                0% 100%
+            );
+            transform: translateY(50px);
+            z-index: 10; 
+        }
+        
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <nav class="sticky top-0 z-50 sticky-nav border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-2" style="background-color: var(--primary-dark);">
+                        <span class="text-white font-bold text-lg">EP</span>
+                    </div>
+                    <span class="font-bold text-xl text-slate-800 tracking-tight">Enduring Planet | B&A</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="text-slate-600 hover:text-current font-medium transition" style="--tw-text-opacity: 1; color: var(--text-main);">Solutions</a>
+                    <a href="#our-approach" class="text-slate-600 hover:text-current font-medium transition" style="--tw-text-opacity: 1; color: var(--text-main);">Approach</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-current font-medium transition" style="--tw-text-opacity: 1; color: var(--text-main);">Pricing</a>
+                    <a href="#difference" class="text-slate-600 hover:text-current font-medium transition" style="--tw-text-opacity: 1; color: var(--text-main);">Difference</a>
+                    <a href="#reviews" class="text-slate-600 hover:text-current font-medium transition" style="--tw-text-opacity: 1; color: var(--text-main);">Reviews</a>
+                </div>
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="text-white px-5 py-2 rounded-full font-medium shadow-lg btn-primary">
+                    Request Deck
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header class="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-48" style="background-color: var(--primary-dark);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-xl font-semibold text-slate-300 mb-4">Bookkeeping and Accounting Products and Services</p>
+                <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white">
+                    One Accounting Intelligence Platform for <span style="color: var(--accent-teal);">Climate Startups & SMBs.</span>
+                </h1>
+                <div class="accent-bar mx-auto"></div>
+                <p class="mt-8 text-2xl text-slate-400 max-w-2xl mx-auto">
+                    A complete financial toolkit built to transform financial data into decisions.
+                </p>
+            </div>
+        </div>
+        <div class="hero-separator"></div>
+    </header>
+
+    <!-- 2. Products & Solutions -->
+    <section id="solutions" class="py-24" style="background-color: var(--bg-secondary);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl section-heading mb-3">Our Bookkeeping & Accounting Products</h2>
+                <p class="text-lg text-slate-600 max-w-4xl mx-auto">
+                    A complete financial toolkit built to transform financial data into decisions.
+                </p>
+            </div>
+
+            <!-- Tabbed Overview -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-white p-1 rounded-xl shadow-inner inline-flex border border-gray-200">
+                    <button onclick="filterServices('essential')" id="btn-essential" class="px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 text-white shadow-md btn-primary">
+                        Stand-alone products / Essential Solutions
+                    </button>
+                    <button onclick="filterServices('controller')" id="btn-controller" class="px-6 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-current transition-all duration-200">
+                        Retainer-based Controller Work
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Service Grid -->
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            
+            <!-- STANDALONE PRODUCTS (IN-DEPTH) -->
+            <div id="standalone-details" class="mt-8 space-y-12 max-w-7xl mx-auto">
+                <h3 class="text-3xl font-bold text-slate-800 mb-8 px-4 sm:px-6 lg:px-8">Detailed Standalone Solutions</h3>
+                
+                <div id="financial-reporting-detail" class="feature-card-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="feature-icon-lg">📊</div>
+                        <h4 class="text-2xl font-bold text-slate-800 ml-4" style="color: var(--accent-teal);">Financial Reporting: Precision & Compliance</h4>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-4">We turn your monthly transactions into GAAP-compliant, actionable financial statements delivered on a predictable schedule, giving you the confidence to manage your business.</p>
+                    <h5 class="text-base font-semibold text-slate-800 mt-4 mb-2">Precision Bookkeeping & Finalization</h5>
+                    <ul class="list-disc list-inside feature-list-sm text-slate-600 ml-4 space-y-2">
+                        <li>Core Monthly Deliverables: GAAP-compliant P&L, Balance Sheet, and Cash Flow statements monthly by the 15th.</li>
+                        <li>Bookkeeping Hygiene: Ensures continuous accuracy through weekly categorization and reconciliation of all transactions.</li>
+                        <li>Volume Scope: The standard package includes full processing and reconciliation for up to 200 transactions monthly.</li>
+                        <li>Compliance Assurance: Manages payroll integration, accruals, adjustments, and final book locking for audit readiness.</li>
+                    </ul>
+                </div>
+
+                <div id="vendor-management-detail" class="feature-card-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="feature-icon-lg">🤝</div>
+                        <h4 class="text-2xl font-bold text-slate-800 ml-4" style="color: var(--accent-teal);">Vendor Management (Accounts Payable)</h4>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-4">We transform your accounts payable from a time-consuming chore into a streamlined, strategic advantage.</p>
+                    <h5 class="text-base font-semibold text-slate-800 mt-4 mb-2">Partnership & Compliance</h5>
+                    <ul class="list-disc list-inside feature-list-sm text-slate-600 ml-4 space-y-2">
+                        <li>Partnership & Oversight: Establishes custom SOPs and provides expert oversight from setup to audit readiness.</li>
+                        <li>Effortless Automation: Automates bill recording, approvals, and payments using industry-leading financial tech stacks.</li>
+                        <li>Stress-Free 1099: Handles all year-round data tracking, preparation, and timely filing of Form 1099.</li>
+                        <li>Secure Transactions: Eliminates fraud risk through mandatory security checks and dual-verified payments.</li>
+                        <li>Vendor Relationship Management: Proactively handles vendor communication, statement requests, and payment confirmations.</li>
+                        <li>Weekly Insights: Delivers weekly summaries for a quick, clear overview of accounts payable.</li>
+                    </ul>
+                </div>
+
+                <div id="invoicing-collections-detail" class="feature-card-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="feature-icon-lg">💸</div>
+                        <h4 class="text-2xl font-bold text-slate-800 ml-4" style="color: var(--accent-teal);">Invoicing & Collections (Accounts Receivable)</h4>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-4">We manage the entire revenue lifecycle to ensure you get paid faster and maximize your cash flow.</p>
+                    <h5 class="text-base font-semibold text-slate-800 mt-4 mb-2">Systems & Cash Flow Control</h5>
+                    <ul class="list-disc list-inside feature-list-sm text-slate-600 ml-4 space-y-2">
+                        <li>System Setup & SOP: Establishes custom AR SOP and configures customer profiles for guaranteed accuracy.</li>
+                        <li>Precision Invoicing: Manages creation, itemization, and timely delivery of accurate customer invoices.</li>
+                        <li>Proactive Reminders: Implements structured reminders before and after due dates to accelerate collections.</li>
+                        <li>Weekly Clarity: Delivers Weekly AR Aging Reports and DSO tracking for actionable cash flow insights.</li>
+                        <li>Financial Integrity: Performs weekly AR to GL reconciliation to guarantee revenue data integrity.</li>
+                        <li>Bad Debt Management: Handles proper accounting for overpayments, credits, and GAAP-compliant bad debt write-offs.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RETAINER SERVICES (IN-DEPTH) -->
+            <div id="retainer-details-group" class="mt-8 space-y-12 max-w-7xl mx-auto">
+                <h3 class="text-3xl font-bold text-slate-800 mb-8 px-4 sm:px-6 lg:px-8">Retainer services: Strategic Compliance and Management</h3>
+                
+                <div class="feature-card-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="feature-icon-lg">🏛️</div>
+                        <h4 class="text-2xl font-bold text-slate-800 ml-4" style="color: var(--accent-teal);">DCAA Compliance & Government Contract Readiness</h4>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-4">We install and maintain the precise financial controls required to pass DCAA audits, maximize cost recovery, and ensure compliance for federal contractors and awardees.</p>
+                    <ul class="list-disc list-inside feature-list-sm text-slate-600 ml-4 space-y-2">
+                        <li>Tailors COA to segregate direct/indirect costs, meeting FAR 31 Cost Principles.</li>
+                        <li>Provides specialized system setup and documentation for SBIR Phase II DCAA Accounting System Review (SF 1408).</li>
+                        <li>Calculates auditable indirect rates (Fringe, Overhead, G&A) and reviews expenses against FAR 31 to segregate unallowable costs.</li>
+                        <li>Offers internal readiness checks and acts as an expert liaison during the DCAA audit process.</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="feature-icon-lg">📦</div>
+                        <h4 class="text-2xl font-bold text-slate-800 ml-4" style="color: var(--accent-teal);">Inventory Management</h4>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-4">We integrate your Purchasing and Inventory workflows for maximum efficiency, accurate stock levels, and reduced carrying costs.</p>
+                    <ul class="list-disc list-inside feature-list-sm text-slate-600 ml-4 space-y-2">
+                        <li>Manages the full Purchase Order (PO) lifecycle, including creation, tracking, and matching with invoices.</li>
+                        <li>Tracks stock levels tied to POs, providing an audit trail for COGS and accurate unit costing.</li>
+                        <li>Ensures costing accuracy by assigning correct landed costs (freight, duties) to inventory units.</li>
+                        <li>Performs Variance Analysis and inventory adjustments based on client POC confirmation of goods received and physical counts.</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="feature-icon-lg">⚙️</div>
+                        <h4 class="text-2xl font-bold text-slate-800 ml-4" style="color: var(--accent-teal);">Additional Controller Services</h4>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-4">Full back office support services available as part of our flexible retainer model.</p>
+                    <ul class="list-disc list-inside feature-list-sm text-slate-600 ml-4 space-y-2">
+                        <li>Manages sales tax end-to-end, from registration and setup to monthly filing and remittance.</li>
+                        <li>Provides loan administration, ensuring accurate covenant tracking and compliance with lender requirements.</li>
+                        <li>Designs, implements, and integrates the complete accounting system infrastructure (e.g., COA setup).</li>
+                        <li>Optimizes financial processes by implementing automation and enforcing bookkeeping hygiene for efficiency.</li>
+                        <li>Offers specialized non-profit accounting guidance on fund accounting, restricted grants, and compliance.</li>
+                        <li>Provides full preparation and liaison support for annual audits and due diligence rounds.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Our Approach -->
+            <div id="our-approach" class="mt-20 p-8 rounded-xl shadow-2xl max-w-7xl mx-auto" style="background-color: var(--primary-dark);">
+                <h3 class="text-4xl font-bold text-white text-center mb-12">Our Approach to Managed Accounting</h3>
+                <div class="text-center mb-10">
+                    <p class="text-xl text-slate-300 mb-6">Our seamless 4-step process ensures predictable, accurate, and timely financial results.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="process-step">
+                        <div class="text-2xl font-bold" style="color: var(--accent-teal);">01</div>
+                        <div class="process-header">Onboarding & Systems Setup</div>
+                        <div class="process-role role-you">
+                            <strong style="color: var(--accent-teal);">Your Part:</strong> Submit all onboarding documents and provide access to your accounting software.
+                        </div>
+                        <div class="process-role role-our">
+                            <strong style="color: var(--primary-dark);">Our Part:</strong> Set up and confirm all system integrations, establishing a seamless data flow.
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="text-2xl font-bold" style="color: var(--accent-teal);">02</div>
+                        <div class="process-header">Clean-up & Historical Data</div>
+                        <div class="process-role role-you">
+                            <strong style="color: var(--accent-teal);">Your Part:</strong> Authorize the approach for historical clean-up based on timeline preference.
+                        </div>
+                        <div class="process-role role-our">
+                            <strong style="color: var(--primary-dark);">Our Part:</strong> Allocate retainer hours to clean-up, or expedite separately for an on-time close.
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="text-2xl font-bold" style="color: var(--accent-teal);">03</div>
+                        <div class="process-header">Weekly Review & Reconciliation</div>
+                        <div class="process-role role-you">
+                            <strong style="color: var(--accent-teal);">Your Part:</strong> Provide documentation for any pending transactions to ensure accuracy.
+                        </div>
+                        <div class="process-role role-our">
+                            <strong style="color: var(--primary-dark);">Our Part:</strong> Categorize bank transactions every week to maintain clean records and prevent backlogs.
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="text-2xl font-bold" style="color: var(--accent-teal);">04</div>
+                        <div class="process-header">Month-End Close & Delivery</div>
+                        <div class="process-role role-you">
+                            <strong style="color: var(--accent-teal);">Your Part:</strong> Provide final inputs and confirmations on any outstanding items.
+                        </div>
+                        <div class="process-role role-our">
+                            <strong style="color: var(--primary-dark);">Our Part:</strong> Execute close and deliver Management Report (P&L, BS, CFS) by the **15th of the next month**.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div id="tools" class="mt-20 p-8 bg-white rounded-xl shadow-lg border-t-4 max-w-7xl mx-auto" style="border-color: var(--accent-teal);">
+                <h3 class="text-3xl font-bold text-slate-800 mb-6">Tools We Integrate & Manage Flawlessly</h3>
+                <p class="text-sm text-slate-600 mb-8">We seamlessly integrate and manage the tools you need to build a modern finance function.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">QuickBooks</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Xero</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Bill.com</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Gusto</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Shopify</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Rippling</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Justworks</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Chase</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Stripe</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Take Command</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Brex</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Ramp</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Carta</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Insperity</span>
+                    <span class="p-3 rounded-lg text-center font-medium text-slate-700" style="background-color: var(--bg-tertiary);">Sage Intacct</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Difference -->
+    <section id="difference" class="py-24" style="background-color: var(--bg-tertiary);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl section-heading mb-3">The Enduring Planet Difference</h2>
+                <p class="text-lg text-slate-600 max-w-4xl mx-auto">
+                    We're more than a service provider; we're your embedded financial partners. Our team of Controllers and Accountants offers fully managed accounting and bookkeeping services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-lg service-card">
+                    <p class="text-xl font-bold text-slate-800 mb-2" style="color: var(--accent-teal);">Client-Focused Approach</p>
+                    <p class="text-sm text-slate-600">Your single monthly fee covers the build, ongoing updates, regular meetings, and hands-on support.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-lg service-card">
+                    <p class="text-xl font-bold text-slate-800 mb-2" style="color: var(--accent-teal);">Experienced Leadership</p>
+                    <p class="text-sm text-slate-600">We provide enterprise-level talent. Our teams are led by seasoned Accountants who have an average of 5 years of experience.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-lg service-card">
+                    <p class="text-xl font-bold text-slate-800 mb-2" style="color: var(--accent-teal);">Personalized Onboarding</p>
+                    <p class="text-sm text-slate-600">Your dedicated team learns your business and connects to your financial data sources ensuring setting the stage for accurate books.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-lg service-card">
+                    <p class="text-xl font-bold text-slate-800 mb-2" style="color: var(--accent-teal);">Accounting That Scales With You</p>
+                    <p class="text-sm text-slate-600">We build a scalable accounting infrastructure that evolves with your business, from basic bookkeeping to complex due diligence.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-lg service-card">
+                    <p class="text-xl font-bold text-slate-800 mb-2" style="color: var(--accent-teal);">Transparent Pricing</p>
+                    <p class="text-sm text-slate-600">Fixed monthly packages provide clarity and predictability for your bookkeeping and tax needs.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-lg service-card">
+                    <p class="text-xl font-bold text-slate-800 mb-2" style="color: var(--accent-teal);">Expertise in Climate</p>
+                    <p class="text-sm text-slate-600">EP specializes in working with venture-backed startups, small businesses, and non-profits across the climate sector, ensuring your financials are always best-in-class and investor ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Pricing Table -->
+    <section id="pricing" class="py-24" style="background-color: var(--primary-dark);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold mb-3 text-white">Pricing</h2>
+                <p class="text-lg text-slate-300 max-w-4xl mx-auto">Fixed, transparent, and scalable.</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Product</th>
+                            <th style="width: 60%;">Key Focus</th>
+                            <th style="width: 20%;">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bookkeeping and Reporting</td>
+                            <td>Comprehensive bookkeeping & accounting for up to 200 monthly transactions: bi-weekly reconciliations, GAAP-compliant records, and monthly financial statements (P&L, BS, CFS) finalized by the 15th.</td>
+                            <td>$875/month</td>
+                        </tr>
+                        <tr>
+                            <td>DCAA-Compliance</td>
+                            <td>Additional Expense and Labor Tracking</td>
+                            <td>$500/month</td>
+                        </tr>
+                        <tr>
+                            <td>Account Payable (AP) Support</td>
+                            <td>Invoice processing for 25 invoices/month including labor allocation & tracking in Bill.com/QBO/other AP platforms.</td>
+                            <td>$250/month</td>
+                        </tr>
+                        <tr>
+                            <td>Account Receivable (AR) Support</td>
+                            <td>Invoice processing for 25 invoices/month including all associated labor with invoice creation, communication with customers, etc.</td>
+                            <td>$500/month</td>
+                        </tr>
+                        <tr>
+                            <td>Purchase Order (PO) Support</td>
+                            <td>Processing for 25 POs, including all associated labor with creating POs, communicating with vendors, etc.</td>
+                            <td>$250/month</td>
+                        </tr>
+                        <tr>
+                            <td>Retainer-based Controller Work</td>
+                            <td>Ongoing, flexible B&A support on an hourly basis. Weekly hours capped - rolled over from week to week but not from month to month.</td>
+                            <td>$32.5/hour</td>
+                        </tr>
+                         <tr>
+                            <td>QBO Initial Set-Up</td>
+                            <td>3 hours of set-up - unused hours credited back</td>
+                            <td>$225 (One-time fee)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Reviews -->
+    <section id="reviews" class="py-24" style="background-color: var(--bg-primary);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl section-heading mb-3">Reviews</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">See what a solid financial foundation can do for you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card">
+                    <p class="text-slate-700 italic mb-6 leading-relaxed text-sm">
+                        "Enduring Planet's team has been extremely supportive and communicative in taking ownership of our books. They have helped set up a better AP process, identified and performed necessary cleanup tasks, and provided a very smooth transition."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <p class="font-bold text-slate-900">Alan Shanoski</p>
+                        <p class="text-sm text-slate-500">Founder</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="text-slate-700 italic mb-6 leading-relaxed text-sm">
+                        "Our experience has been fantastic. The bookkeeping and accounting relationship is the best we've ever experienced as a company, and at a significantly reduced cost compared to our previous CPA firm."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <p class="font-bold text-slate-900">Phil Neumann</p>
+                        <p class="text-sm text-slate-500">CEO</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="text-slate-700 italic mb-6 leading-relaxed text-sm">
+                        "Enduring Planet were able to scale their levels of support for us quickly, and on demand. The team has strong management in place, that means we have confidence that the quality of their work is maintained."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <p class="font-bold text-slate-900">Mairi Robertson</p>
+                        <p class="text-sm text-slate-500">Director of Ops</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20" style="background-color: var(--bg-secondary);">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Start Your Financial Transformation Today</h2>
+            <form onsubmit="event.preventDefault(); alert('Success!');" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Business email" required class="flex-1 px-5 py-3 rounded-lg border border-slate-300 outline-none">
+                <button type="submit" class="px-8 py-3 rounded-lg text-white font-bold btn-primary shadow-lg">Schedule Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12" style="background-color: var(--primary-dark);">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2024 Enduring Planet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const servicesData = {
+            essential: [
+                { title: "Financial Reporting", icon: "📊", desc: "US GAAP financial reports monthly by the 15th, categorization, and monthly reviews." },
+                { title: "Vendor Management", icon: "🤝", desc: "Manage vendor coordination, onboarding, and payment workflows via modern platforms." },
+                { title: "Invoicing & Collections", icon: "💸", desc: "Generation and timely delivery of customer invoices and collections follow-up." }
+            ],
+            controller: [
+                { title: "DCAA Compliance", icon: "🏛️", desc: "Ensures accounting meets rigorous DCAA standards and FAR Part 31 principles." },
+                { title: "Inventory Management", icon: "📦", desc: "Tracks physical stock against financial records using Purchase Orders as controls." },
+                { title: "Additional Services", icon: "⚙️", desc: "Sales tax, loan admin, system infrastructure, and audit/diligence support." }
+            ]
+        };
+
+        function filterServices(category) {
+            const gridContainer = document.getElementById('services-grid');
+            const standaloneDetails = document.getElementById('standalone-details');
+            const retainerDetailsGroup = document.getElementById('retainer-details-group');
+            const btnEssential = document.getElementById('btn-essential');
+            const btnController = document.getElementById('btn-controller');
+            
+            const activeClasses = ['btn-primary', 'text-white', 'shadow-md'];
+            const inactiveClasses = ['text-slate-600', 'hover:text-current'];
+
+            if (category === 'essential') {
+                standaloneDetails.style.display = 'block';
+                retainerDetailsGroup.style.display = 'none';
+                btnEssential.classList.add(...activeClasses);
+                btnEssential.classList.remove(...inactiveClasses);
+                btnController.classList.remove(...activeClasses);
+                btnController.classList.add(...inactiveClasses);
+            } else {
+                standaloneDetails.style.display = 'none';
+                retainerDetailsGroup.style.display = 'block';
+                btnController.classList.add(...activeClasses);
+                btnController.classList.remove(...inactiveClasses);
+                btnEssential.classList.remove(...activeClasses);
+                btnEssential.classList.add(...inactiveClasses);
+            }
+
+            if (gridContainer) {
+                gridContainer.innerHTML = '';
+                const services = servicesData[category];
+                services.forEach((service) => {
+                    const card = document.createElement('div');
+                    card.className = 'service-card bg-white p-6 rounded-xl border border-gray-200 shadow-md flex flex-col';
+                    card.innerHTML = `
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-xl mr-3 font-bold" style="background-color: var(--accent-teal); color: white;">${service.icon}</div>
+                            <h3 class="text-xl font-bold text-slate-800">${service.title}</h3>
+                        </div>
+                        <p class="text-slate-600 flex-grow text-sm">${service.desc}</p>
+                    `;
+                    gridContainer.appendChild(card);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => filterServices('essential'));
+    </script>
+</body>
+</html>
